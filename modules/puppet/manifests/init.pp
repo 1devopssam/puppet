@@ -9,12 +9,6 @@ class puppet {
     mode   => '0755',
   }
 
-  file { '/home/ubuntu/.ssh/id_rsa':
-    source => 'puppet:///modules/puppet/ubuntu.priv',
-    owner  => 'ubuntu',
-    mode   => '0600',
-  }
-
   cron { 'run-puppet':
     ensure  => 'present',
     command => '/usr/local/bin/pull-updates',
