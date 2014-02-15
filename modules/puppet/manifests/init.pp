@@ -15,4 +15,9 @@ class puppet {
     minute  => '*/10',
     hour    => '*',
   }
+
+  file { '/tmp/test.txt':
+    ensure => 'present',
+    content => "Hello\n",
+  }
 }
